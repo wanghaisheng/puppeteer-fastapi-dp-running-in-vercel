@@ -3,12 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "setup": "npm install",
     "fastapi-dev": "pip3 install -r requirements.txt && python3 -m uvicorn api.main:app --reload",
-    "next-dev": "npm install && next dev --experimental-https",
+    "next-dev": "next dev",
     "dev": "concurrently \"npm run next-dev\" \"npm run fastapi-dev\"",
-    "build": "npm run dev && next build",
-    "start": "next start",
+    "next-build": "next build",
+    "fastapi-build": "pip3 install -r requirements.txt",
+    "build": "npm run next-build && npm run fastapi-build",
+    "next-start": "next start",
+    "start": "concurrently \"npm run next-start\" \"npm run fastapi-start\"",
+    "fastapi-start": "uvicorn api.main:app --reload",
     "lint": "next lint"
   },
   "dependencies": {
