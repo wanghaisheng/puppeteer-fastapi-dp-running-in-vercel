@@ -12,6 +12,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/bundle-analyzer": "^14.2.4",
     "@sparticuz/chromium": "^123.0.0",
     "@sparticuz/chromium-min": "^123.0.0",
     "puppeteer": "^22.6.2",
